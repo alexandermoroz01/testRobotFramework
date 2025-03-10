@@ -24,3 +24,10 @@ jobs:
       - name: Run Robot Framework tests
         run: |
           robot -d Output --loglevel TRACE Tests/*
+
+      - name: Upload Robot Framework reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: RobotFramework-Reports
+          path: results/
+          retention-days: 7
