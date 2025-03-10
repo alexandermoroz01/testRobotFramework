@@ -26,6 +26,7 @@ jobs:
           robot -d Output --loglevel TRACE Tests/*
 
       - name: Upload Robot Framework reports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: RobotFramework-Reports
