@@ -1,15 +1,18 @@
 *** Settings ***
 Documentation    This is my first test case
 Resource    ../Resourses/resourses.robot
+Resource    ../Resourses/browserOptions.robot
 Library     OperatingSystem
-Library    SeleniumLibrary
-
+Library     SeleniumLibrary
+Suite Setup    Set Headless Mode
+*** Variables ***
+${BROWSER_OPTIONS}
 *** Keywords ***
 
 
 *** Test Cases ***
  TEST1
-    [Setup]     Open Browser    url=https://the-internet.herokuapp.com/login    browser=chrome
+    [Setup]     Open Browser    url=https://the-internet.herokuapp.com/login    browser=chrome      options=${BROWSER_OPTIONS}
 
     resourses.Login     tomsmith    SuperSecretPassword!
     Element Should Contain    id=flash    You logged into a secure area!
