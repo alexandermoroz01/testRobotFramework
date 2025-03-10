@@ -40,7 +40,7 @@ Click Logout Button
 
 Get Flash Message Text
     ${text}     get text    ${FLASH_MESSAGE}
-    [Return]    ${text}
+    RETURN    ${text}
 
 Login
     [Arguments]     ${USERNAME}     ${PASSWORD}
