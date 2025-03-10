@@ -16,7 +16,6 @@ Library    SeleniumLibrary
     ${test}     resourses.Get Flash Message Text
     log     ${test}
     should contain    ${test}    You logged into a secure area!
-    should contain    resourses.Get Flash Message Text    You logged into a secure area!
 
     resourses.Click Logout Button
     [Teardown]      Close Browser
